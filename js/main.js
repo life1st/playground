@@ -50,24 +50,25 @@
 				console.log(button);
 				button.href = "setcounttime.html";
 				button.setAttribute("class","settime");
-				/*button.onclick=function(){
-					console.log('onclick')
-				}*/
+
 			}else if(!!localStorage["dates"]&&!!localStorage["times"]){
 				title.innerHTML = localStorage["titles"]||'标题';
 				// countTime.innerHTML = localStorage["dates"]+" "+localStorage["times"]||'time';
                 var date = localStorage["dates"].split("-"),
-                    time = localStorage["times"].split(":");
-                console.log(date,time)
+                    timeParse = date[0]+'/'+date[1]+'/'+date[2]+' '+localStorage["times"]+':00';
+                var endTime = Date.parse(timeParse);
+
 				var s = setInterval(function () {
-				    var times = new Date();
-                    var year = date[0]-times.getFullYear(),
-                        month = date[1]-times.getMonth(),
-                        day = date[2]-times.getDay(),
-                        hour = time[0]-times.getHours(),
-                        minutes = time[1]-times.getMinutes();
-				    var text = (year>0?year+"年 ":"")+(month>0?month+"月 ":"")+(day>0?day+"天 ":"")+(hour>0?hour+"小时 ":'')+(minutes>0?minutes+"分 ":'')+(60-times.getSeconds()+'秒');
-                    countTime.innerHTML = text;
+				    var nowTime = new Date();
+				    var times = endTime-nowTime.getTime();
+				    var year = parseInt(times/(1000*60*60*24*365)),
+                        day = parseInt((times%(1000*60*60*24*365))/(1000*60*60*24)),
+                        hour = parseInt(((times%(1000*60*60*24*365))%(1000*60*60*24))/(1000*60*60)),
+                        minutes = parseInt((((times%(1000*60*60*24*365))%(1000*60*60*24))%(1000*60*60))/(1000*60)),
+                        secends = parseInt(((((times%(1000*60*60*24*365))%(1000*60*60*24))%(1000*60*60))%(1000*60))/1000);
+
+				    var texts = (year>=1?year+"年 ":"")+(day>=1?day+"天 ":"")+(hour>=1?hour+"小时 ":'')+(minutes>=1?minutes+"分 ":'')+(secends>=1?secends+'秒':'时间到');
+                    countTime.innerHTML = texts;
                 },500)
 			}
 		}
@@ -75,4 +76,4 @@
 			window.location.replace("setcounttime.html");
 		}
 
-	}
+	};
