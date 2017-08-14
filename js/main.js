@@ -61,13 +61,13 @@
 				var s = setInterval(function () {
 				    var nowTime = new Date();
 				    var times = endTime-nowTime.getTime();
-				    var year = parseInt(times/(1000*60*60*24*365)),
+				    var year = parseInt((times/(1000*60*60*24*365))<1?0:times/(1000*60*60*24*365)),
                         day = parseInt((times%(1000*60*60*24*365))/(1000*60*60*24)),
                         hour = parseInt(((times%(1000*60*60*24*365))%(1000*60*60*24))/(1000*60*60)),
                         minutes = parseInt((((times%(1000*60*60*24*365))%(1000*60*60*24))%(1000*60*60))/(1000*60)),
                         secends = parseInt(((((times%(1000*60*60*24*365))%(1000*60*60*24))%(1000*60*60))%(1000*60))/1000);
 
-				    var texts = (year>=1?year+"年 ":"")+(day>=1?day+"天 ":"")+(hour>=1?hour+"小时 ":'')+(minutes>=1?minutes+"分 ":'')+(secends>=1?secends+'秒':'时间到');
+				    var texts = times>0?((year>=1?year+"年 ":"")+(day>=1?day+"天 ":"")+(hour>=1?hour+"小时 ":'')+(minutes>=1?minutes+"分 ":'')+(secends>=1?secends+'秒':'')):'时间到';
                     countTime.innerHTML = texts;
                 },500)
 			}
