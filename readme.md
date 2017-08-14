@@ -12,12 +12,13 @@
 
 anyother TODO.
 
-## What I learn.
+## What I learn?
 
 ### localstorage的使用 !important
 localstorage中储存的键值对，可以通过localstorage["foo"]="string"进行设置，localstorage["foo"]进行读取。
 
 同一域名下的不同页面共享同一个localstorage空间。
+
 localstorage永久储存，除非使用
 	
 	localstorage.clear()
@@ -27,7 +28,7 @@ localstorage永久储存，除非使用
 	为什么不使用localstorage.foo 调用？
 	变量名储存格式为字符串，使用.无法处理字符串中含空格的情况
 
-###window.location API
+### window.location API
 使用window.location.replace('foo.link')进行页面跳转
 
 	还有window.location.reaload()刷新页面（会清除history记录,或者说相当于打开一个新页面不含history记录）
@@ -35,10 +36,12 @@ localstorage永久储存，除非使用
 ### 原生Js的使用
 函数的调用，DOM onload的检测回调
 
-#Date()类型中数据的相互转换
+### Date()类型中数据的相互转换
 input.date控件传输的日期格式和Date()的日期格式不同，通过
+
 	Date.parse(foo) =>转换为UTC时间戳
 	foo.split("string") =>字符串分隔，string定义分隔位置
+	
 对数据进行转换
 
 不过仍然觉得不够优雅，但是没有看到更好的解决方案。
@@ -51,7 +54,7 @@ input.date控件传输的日期格式和Date()的日期格式不同，通过
 	居中：设置父元素text-align:center，子元素display:inline-block对子元素进行居中
 	input中的提示文字：使用placeholder属性 
 
-# what I unsatisfy.
+## what I unsatisfy?
 时间戳相减的代码太不优雅了。
 
 anymore...
