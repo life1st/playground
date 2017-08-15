@@ -1,15 +1,21 @@
-# TimeCounter (又一个Demo.)
+# TimeCounter 
+
+(显示北京时间及设置倒计时的又一个Demo.)
 
 ## 功能
-获取并显示当前时间，另外支持设置倒计时。
+获取并显示当前时间，设置倒计时。
 
 倒计时功能中可以设置一个标题，时间支持最长无限制，最短到分钟。
 
+#### `特色`：页面关闭后再重新打开仍然保留上次设定的数据
+
+
 ## TODO
-更新页面外观：倒计时显示效果（例如添加动画），日期选择框外观
+更新页面外观：倒计时显示效果，动画，日期选择框外观
 
 使用更优雅的方式处理时间戳的运算
 
+Android上的Chrome使用软键盘时，iPad上的safari横屏显示时，布局有问题。
 anyother TODO.
 
 ## What I learn?
@@ -54,14 +60,16 @@ input.date控件传输的日期格式和Date()的日期格式不同，通过
 	居中：设置父元素text-align:center，子元素display:inline-block对子元素进行居中
 	input中的提示文字：使用placeholder属性 
 
-### 其中遇到的坑
+## 其中遇到的坑
 1.由时间戳相减之后计算的year值太小（<10^-5）,Date()自动转换为科学计数法表示，parseInt()于是将其转换为了>0的整数。解决方法是使用三目运算符对parseInt()前的值进行判断，如果<1则将其置为0.
 
 ```javascript
     var year = parseInt((times/(1000*60*60*24*365))<1?0:times/(1000*60*60*24*365));
-    
-    //好的，很不优雅 :(
  ```
+ >update0815:现已更改为使用Math.floor(foo)替代parseInt(foo)
+ 
+ >>     Math.floor(foo) //向下取整, 返回小于或等于一个给定数字的最大整数。
+    
 2.对secends的判断不够准确，如果<1时设置为‘时间到’，那么每分钟都会显示一次，另外也需要判断时间是否已经到了，所以解决办法是在字符串的顶层再嵌套一个三目运算符对times这个变量进行判断。
 ```javascript
     times>0?((year>=1?year+"年 ":"")+(day>=1?day+"天 ":"")+(hour>=1?hour+"小时 ":'')+       (minutes>=1?minutes+"分 ":'')+(secends>=1?secends+'秒':'')):'时间到'
