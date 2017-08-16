@@ -53,8 +53,15 @@
 				title.innerHTML = (!!localStorage["titles"]?'离&nbsp'+localStorage["titles"]+'&nbsp还有：':'标题');
                 var date = localStorage["dates"].split("-"),
                     timeParse = date[0]+'/'+date[1]+'/'+date[2]+' '+localStorage["times"]+':00';
-                var endTime = Date.parse(timeParse),
-                    text;
+
+                var endTime = Date.parse(timeParse);
+
+                countTime.innerHTML="<time id=\"year\"></time><time id=\"day\"></time><time id=\"hour\"></time><time id=\"minutes\"></time><time id=\"seconds\"></time>";
+				var	tYear = document.getElementById("year"),
+					tDay = document.getElementById("day"),
+					tHour = document.getElementById("hour"),
+					tMinutes = document.getElementById("minutes"),
+					tSeconds = document.getElementById("seconds");
 
                 /*设置倒计时*/
 				var s = setInterval(function () {
@@ -68,12 +75,15 @@
 
                     if (times<0) {
                         clearInterval(s);
-                        text = "时间到";
+                        tSeconds.style.display="none";
+                        countTime.innerHTML = "时间到";
                     }else{
-                        text = (year>=1?year+"年 ":"")+(day>=1?day+"天 ":"")+(hour>=1?hour+"小时 ":'')+(minutes>=1?minutes+"分 ":'')+(seconds>=1?seconds+'秒':'')
+                    	tYear.innerHTML = (year>=1?year:tYear.style.display="none");
+                    	tDay.innerHTML = (day>=1?day:tDay.style.display="none");
+                    	tHour.innerHTML = (hour>=1?hour:tHour.style.display="none");
+                    	tMinutes.innerHTML = (minutes>=1?minutes:tMinutes.style.display="none");
+                    	tSeconds.innerHTML = (seconds>=10?seconds:'0'+seconds);
                     }
-                    countTime.innerHTML = text;
-
                 },500)
 			}
 		}

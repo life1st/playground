@@ -2,7 +2,17 @@ body{background-color: #000;}
 p{text-align:center;color: #FFF;margin-top: 60px;cursor: pointer;}
 a{display: block;height: 50px;background-color: #F00;text-align: center;border-radius: 5px;color: #FFF;font-size: 24px;line-height: 50px;padding: 0 10px;cursor:pointer;text-decoration: none;position: fixed;bottom: 24px;right:46%;left: 46%}
 a:hover{background-color: #D03;color: #E5E5E5}
+#title{font-size: 36px;}
+#title:first-letter{font-size: 48px;margin-right: 8px;color:#CD2626;}
 #title:hover{color:#DDD}
+
+#countTime{position: relative;top:80px;}
+time{display: inline-block;width: 52px;height: 50px;border: 1px solid #FFF;border-radius: 18px;margin: 22px;line-height: 50px;font-size: 36px;}
+#year:after{content: "年";font-size: 18px;float: right;position: relative;right:-1.8em;top:-1em;}
+#day:after{content: "天";font-size: 18px;float: right;position: relative;right:-1.8em;top:-1em;}
+#hour:after{content: "小时";font-size: 18px;float: right;position: relative;right:-1.8em;top:-1em;}
+#minutes:after{content: "分钟";font-size: 18px;float: right;position: relative;right:-1.8em;top:-1em;}
+#seconds:after{content: "秒";font-size: 14px;float: right;position: relative;right:-1.2em;top:-1em;}
 @media screen and (max-width: 769px) {
     a{right:12px;left:12px;}
 }
