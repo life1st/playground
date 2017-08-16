@@ -32,6 +32,7 @@
 	}
 
 	window.onload = function(){
+		document.getElementsByTagName('body')[0].style.height = window.screen.height+"px";
 		var title = document.getElementById("title"),
 			countTime = document.getElementById("countTime");
 		/*设置现在时间*/

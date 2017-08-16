@@ -1,4 +1,5 @@
 window.onload = function(){
+    document.getElementsByTagName('body')[0].style.height = window.screen.height+"px";
     var title = document.getElementById("titles"),
         dates = document.getElementById("dates"),
         time = document.getElementById("times"),
