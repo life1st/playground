@@ -1,0 +1,55 @@
+		.button{
+			display: inline-block;
+			height: 30px;
+			border-radius: 10px;
+			background-color: #F00;
+			box-shadow: 5px 5px 10px #000;
+			text-decoration: none;
+			font-size: 24px;
+			color: #FFF;
+			line-height: 30px;
+			padding:5px 16px;
+		}
+		.button:hover{
+			background-color: #EE3B3B;
+			box-shadow: 5px 5px 10px #000,0 0 5px #FFF inset;
+		}
+		.button:active{
+			box-shadow: 2px 2px 5px #000;
+			color: #FFF;
+		}
+		.button-mini{
+			display: inline-block;
+			height: 20px;
+			border-radius: 6px;
+			background-color: #F00;
+			box-shadow: 2px 2px 6px #000;
+			text-decoration: none;
+			font-size: 14px;
+			color: #FFF;
+			line-height: 20px;
+			padding:2px 8px;
+		}
+		.button-mini:hover{
+			background-color: #EE3B3B;
+			box-shadow: 2px 2px 6px #000,0 0 2px #FFF inset;
+		}
+		.button-mini:active{
+			box-shadow: 1px 1px 1px #000;
+			color: #FFF;
+		}
+		.input{
+			font-size: 18px;
+			outline: none;
+			border: none;
+			border-bottom: 1px solid #F00;
+			padding: 0.1em 0.4em;
+			background-color: #000;
+			color: #FFF;
+		}
+		.input:focus{
+			background-color: #545454;
+			box-shadow: 0 0 10px #757575,0 0 20px #757575 inset;
+			border-radius: 5px;
+			border-bottom: 1px solid #EE3B3B;
+		}
