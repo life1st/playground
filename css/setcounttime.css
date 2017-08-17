@@ -1,9 +1,13 @@
 body{background-color: #000;}
-.button{display:block;position: fixed;bottom:24px;left:24px;right:24px;text-align: center;}
+.button{display:block;position: fixed;bottom:24px;left:12px;right:12px;text-align: center;}
 a{display:inline-block;background-color: #F00; border-radius: 5px;color: #FFF;font-size: 24px;line-height: 50px;padding: 0 14px;cursor:pointer;text-decoration: none;text-align: center;margin: 0 5px;}
 a:hover{background-color: #D03;color: #E5E5E5}
 input{height: 36px;padding-left: 12px;border: none;margin: 10px auto 24px;display: block;font-size: 24px;line-height: 36px;border-radius: 3px;}
 #titles{width: 95%;}
 @media screen and (max-width: 769px) {
-    a{display:block;margin: 14px auto;width: 96%;padding: 0;}
+    a{display:block;margin-top: 14px;padding: 0 10px;}
+}
+
+@media screen and (max-height: 400px) {
+    a{display: none;}
 }

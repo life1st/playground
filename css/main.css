@@ -1,6 +1,6 @@
-body{background-color: #000;}
+body{background-color: #000;height: 100%;width: 100%;overflow: hidden;}
 p{text-align:center;color: #FFF;margin-top: 60px;cursor: pointer;}
-a{display: block;height: 50px;background-color: #F00;text-align: center;border-radius: 5px;color: #FFF;font-size: 24px;line-height: 50px;padding: 0 10px;cursor:pointer;text-decoration: none;position: fixed;bottom: 24px;right:46%;left: 46%}
+a{display: block;height: 50px;background-color: #F00;text-align: center;border-radius: 5px;color: #FFF;font-size: 24px;line-height: 50px;padding: 0 10px;margin: 0 5px;cursor:pointer;text-decoration: none;position: fixed;bottom: 24px;right:46%;left: 46%}
 a:hover{background-color: #D03;color: #E5E5E5}
 #title{font-size: 36px;}
 #title:first-letter{font-size: 48px;margin-right: 8px;color:#CD2626;}

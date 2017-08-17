@@ -1,5 +1,4 @@
 window.onload = function(){
-    document.getElementsByTagName('body')[0].style.height = window.screen.height+"px";
     var title = document.getElementById("titles"),
         dates = document.getElementById("dates"),
         time = document.getElementById("times"),
@@ -16,7 +15,7 @@ window.onload = function(){
     time.value = localStorage["times"]||date.getHours()+":"+date.getMinutes();
 
     submit.onclick = function(){
-        console.log(title.value);
+
         localStorage["titles"] = title.value;
         localStorage["dates"] = dates.value;
         localStorage["times"] = time.value;
