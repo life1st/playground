@@ -1,6 +1,6 @@
 	function transformTime(){
 		var time = new Date();
-		var timeString = time.getFullYear()+"年 "+time.getMonth()+"月 "+time.getDate()+"日  星期"+transformDay(time.getDay())+"<br />"+time.getHours()+"点 "+time.getMinutes()+"分 "+time.getSeconds()+"秒 <br />";
+		var timeString = time.getFullYear()+"年 "+(time.getMonth()+1)+"月 "+time.getDate()+"日  星期"+transformDay(time.getDay())+"<br />"+time.getHours()+"点 "+time.getMinutes()+"分 "+time.getSeconds()+"秒 <br />";
 		return timeString;
 	}
 	function transformDay(day){
