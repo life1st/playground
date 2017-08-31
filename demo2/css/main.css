@@ -1,0 +1,348 @@
+@keyframes transtop {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    20% {
+        transform: translate3d(0,-16px,0);
+    }
+    40% {
+        transform: translate3d(0,6px,0);
+    }
+    60% {
+        transform: translate3d(0,-8px,0);
+    }
+    80% {
+        transform: translate3d(0,4px,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 10px;
+    width: 1400px;
+    margin: 0 auto;
+}
+body {
+    background-color: #78cec7;
+    height: 100%;
+    min-width: 1300px;
+}
+a {
+    text-decoration: none;
+}
+header {
+    height: 70px;
+    padding-top: 70px;
+}
+
+.logo {
+    display: inline-block;
+    background: url("../images/All-about-travel.png") no-repeat;
+    width: 130px;
+    height: 36px;
+    margin-top: 25px;
+    margin-left: 120px;
+    vertical-align: bottom;
+    float: left;
+    cursor: pointer;
+}
+.login-msg {
+    display: block;
+    float: right;
+    margin-right: 115px;
+    height: 2rem;
+}
+.login-msg li {
+    display: inline-block;
+    margin: 0;
+    padding: 1px 4px;
+}
+.login-msg a {
+    color: #fff;
+}
+.login-msg a:hover {
+    color: #666;
+}
+.login-msg span {
+    color: #fff;
+}
+.links {
+    clear: right;
+    display: inline-block;
+    float: right;
+    font-size: 0;
+    width: 115px;
+    background-color: #fff;
+}
+.links li {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    font-size: 1.8rem;
+    line-height: 35px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    box-shadow: 2px 0 4px -2px rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+.links li:hover {
+
+}
+.fb {
+    background-color: #455b95;
+}
+.twitter {
+    background-color: #50c9f1;
+}
+.top-navi {
+    float: right;
+    margin-right: 0;
+    vertical-align: bottom;
+    font-size: 0;
+}
+.top-navi li {
+    display: inline-block;
+    padding: 0 35px;
+    margin: 0 1px;
+    line-height: 35px;
+    background-color: #fff;
+    color: #6cc1ba;
+    font-size: 1.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color .2s,font-size .2s;
+}
+.top-navi li.active {
+    background-color: #ff7a4c;
+    color: #fff;
+}
+.top-navi li:hover {
+    background-color: #666;
+    font-size: 1.7rem;
+}
+.right-navi {
+    clear: both;
+    float: right;
+    margin: 70px 50px 0 6px ;
+}
+.right-navi li {
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    padding: 0 5px 5px;
+    border-bottom: 1px dashed #d1eeec;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.right-navi i {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 0 7px;
+    vertical-align: top;
+    position: relative;
+    left: 3px;
+}
+.notice i {
+    bottom: -6px;
+    background: url("../images/right-navi.png") 0 0;
+    animation: transtop .3s;
+}
+.event i {
+    background: url("../images/right-navi.png") 0 150px;
+    animation: transtop .3s;
+    animation-delay: .1s;
+}
+.store i {
+    background: url("../images/right-navi.png") 0 90px;
+    animation: transtop .3s;
+    animation-delay: .2s;
+}
+.blog i {
+    left: 4px;
+    background: url("../images/right-navi.png") 0 36px;
+    animation: transtop .3s;
+    animation-delay: .3s;
+}
+.content {
+    position: relative;
+    margin: 70px auto 0;
+    padding-left: 116px;
+    font-size: 0;
+    text-align: center;
+    z-index: 1;
+}
+/*.content:after {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    display: block;
+    width: 1000px;
+    height: 500px;
+    content: ' ';
+    background: url("../images/Layer2.png") center;
+    z-index: 2;
+}*/
+.content div {
+    display: inline-block;
+    position: relative;
+    width: 256px;
+    height: 385px;
+    margin: 0 1px;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    border-top: 8px dashed #78cec7;
+    text-align: center;
+    vertical-align: top;
+    transition: all .5s;
+}
+@font-face {
+    font-family: 'quicksanddash';
+    src: url('../fonts/quicksanddash/quicksand_dash-webfont.woff2') format('woff2'),
+         url('../fonts/quicksanddash/quicksand_dash-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.content h2 {
+    font-family: 'quicksanddash';
+    font-size: 3.2rem;
+    font-weight: normal;
+    margin-top: 45px;
+    color: #ff6c38;
+    letter-spacing: -2px;
+}
+.content h3 {
+    display: inline-block;
+    font-size: 2rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    color: #ff8458;
+}
+.content i {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 180px;
+}
+.content span {
+    display: inline-block;
+    font-size: 1.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    margin-left: 5px;
+    border-radius: 50%;
+    vertical-align: middle;
+    color: #fff;
+    background-color: #ff8458;
+}
+.content b {
+    font-weight:normal;
+    font-style: oblique;
+}
+.content p {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 1rem;
+    width: 13rem;
+}
+.card1 {
+    background: #fff;
+}
+.card1 i{
+    position: relative;
+    left: 8px;
+    background: url("../images/img1.png") no-repeat bottom center;
+}
+.card2 {
+    background: #fff;
+}
+.card2 i{
+    background: url("../images/img2.png") no-repeat bottom center;
+}
+.card3 {
+    background: #ff6c38;
+}
+.card3 i {
+    background: url("../images/img3.png") no-repeat bottom center;
+}
+.card3 h2 {
+    color: #fff;
+}
+.card3 h3 {
+    color: #fff;
+}
+.card3 span {
+    background-color: #7fc9c0;
+}
+.card4 {
+    background: #fff;
+}
+.card4 i {
+    background: url("../images/img4.png") no-repeat bottom center;
+}
+.card1:hover,.card2:hover,.card3:hover,.card4:hover {
+    animation: transtop .6s;
+    cursor: pointer;
+}
+footer {
+    margin-top: 45px;
+    padding-bottom: 40px;
+}
+.logo-button {
+    display: inline-block;
+    float: left;
+    margin-left: 120px;
+    margin-right: 20px;
+    width: 130px;
+    height: 50px;
+    vertical-align: top;
+    background: url("../images/All-about-travel-copy.png") no-repeat;
+}
+.button-navi {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+.button-navi li {
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+.button-navi li:hover {
+    color: #666;
+}
+.button-navi span {
+    color: #fff;
+}
+footer p {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #e6e6e6;
+}
+.foot-link {
+    width: 200px;
+    height: 20px;
+    float: right;
+    position: relative;
+    right: 110px;
+    top: -40px;
+    padding-left: .5rem;
+    border:none;
+    background: #589792;
+    outline:none;
+    color: #78cec7;
+    font-size: 0.8rem;
+    line-height: 20px;
+    font-weight: bold;
+}
