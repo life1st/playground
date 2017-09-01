@@ -254,12 +254,12 @@ header {
     line-height: 22px;
     margin-left: 200px;
 }
-.slide_button {
+.slide_button1 {
     margin-top: 45px;
     height: 16px;
     display: inline-block;
 }
-.slide_button i {
+.slide_button1 i {
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -267,7 +267,7 @@ header {
     border:2px solid #fff;
     border-radius: 16px;
 }
-.slide_button i.active {
+.slide_button1 i.active {
     background-color: #fff;
 }
 .box4 {
