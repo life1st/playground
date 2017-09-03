@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>iMoocDemo</title>
+<style>
+    *{
+      margin: 0;
+      padding: 0;
+
+    }
+    a{
+      text-decoration: none;
+      color:#000;
+    }
+    .top{
+        width:1000px;
+        height:48px;
+        margin:0 auto;
+    }   
+    .top img{
+        float:left;
+        height:48px;
+        margin:0px 24px 0px 15px;
+        line-height:48px;
+        
+    }
+    .top ul li{
+        float:left;
+        list-style-type:none;
+        padding:5px 10px;
+        line-height:38px;
+        margin:0 5px;
+    }
+    .activeli{
+        background:#BD3847;
+    }
+    .top ul li:hover{
+        display:block;
+        background:#BD3847;
+    }
+    .loading{
+        display:none;
+    }
+    .pic{
+        margin:8px auto 2px auto;
+        width:1000px;
+    }
+    .newsscroll{
+        margin:8px auto;
+        width:1000px;
+        background:#3E3E3E;
+        height:48px;
+    }
+    .newsscroll h3{
+        margin:0px;
+        padding:0px 18px;
+        float:left;
+        line-height:48px;
+        font-size:18px;
+        color:white;
+        z-index:2;
+        background:#BD3847;
+    }
+    .newsscroll marquee{
+        position:relative;
+        top:-36px;
+        left:108px;
+        z-index:1;
+        color:white;
+    }
+    .picClass{
+      margin: 14px auto;
+      width: 1000px;
+    }
+    .picClass ul{
+      border: 1px solid #EBEBEB;
+      float: left;
+      margin-right: 1px;
+      list-style-type: none;
+      text-align: center;
+    }
+    .mainContent{
+      clear: both;
+      position: relative;
+      top: 8px;
+      width: 1000px;
+      margin: 8px auto;
+    }
+    .contentTitle{
+      background-color: #BD3847;
+      text-align: left;
+      padding-left: 18px;
+      font-size: 18px;
+      line-height: 48px;
+      color: white;
+    }
+    .newsCenter,.hotActive,.connectUs{ 
+      width:330px;
+      height: 350px;
+      float: left;
+      border: 1px solid #EBEBEB;
+      margin-right: 1px;
+    }
+    .newsDate{
+      border-radius:8px;
+      width: 36px;
+      background-color: #BD3847;
+      margin: 8px 6px 8px 4px;
+      padding:8px;
+      float: left;
+      color: white;
+    }
+    .newsContent p{
+      line-height: 16px;
+      font-size: 14px;
+      margin:8px;
+      border-bottom: 1px solid #EBEBEB;
+    }
+    .hotActive img{
+      width: 300px;
+      height: 180px;
+      margin: 10px 15px;
+    }
+    .hotActive p{
+      margin:2px 10px;
+      text-align: left;
+    }
+    .connectUs p{
+      margin: 15px;
+    }
+    .first{
+      margin-bottom:  18px;
+    }
+    footer{
+      clear: both;
+      position: relative;
+      top:18px;
+      width: 1000px;
+      height: 48px;
+      line-height: 48px;
+      margin: 0 auto;
+      background-color: #E7E7E7;
+      text-align: center;
+    }
+
+
+</style>
+
+  </head>
+  
+  <body>
+      <div class="top">
+          <img src="http://img.mukewang.com/53edadad0001efe202000070.jpg">
+          <ul>
+              <li class="activeli"><a herf="#">首页</a></li>
+              <li><a herf="#">产品特色</a></li>
+              <li><a herf="#">解决方案</a></li>
+              <li><a herf="#">产品价格</a></li>
+              <li><a herf="#">帮助中心</a></li>
+              <li><a herf="#">关于我们</a></li>
+          </ul>
+      </div><!--top end-->
+      <div class="main">
+          <div id="boxMain">
+              <div class="loading"><img src="http://img.mukewang.com/53edad8c000175cb00300029.jpg" alt="加载中..."></div>
+              <div class="pic">
+                  <img src="http://img.mukewang.com/53edad3e0001afad10000318.jpg">
+              </div>
+          </div><!--boxMain end-->
+          <div class="newsscroll">
+            <h3>滚动新闻</h3>
+            <p><marquee>这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 这是滚动新闻 </marquee></p>
+          </div><!--newsscroll end-->
+          <div class="picClass">
+            <ul>
+              <li><img src="http://img.mukewang.com/53edad54000119fb03300130.jpg"></li>
+              <li><p>玩转BootStrap</p></li>
+            </ul>
+            <ul>
+              <li><img src="http://img.mukewang.com/53edad690001260a03300130.jpg"></li>
+              <li><p>企业网站案例</p></li>
+            </ul>
+            <ul>
+              <li><img src="http://img.mukewang.com/53edad7a0001cde803300130.jpg"></li>
+              <li><p>JavaScript基础</p></li>
+            </ul>
+          </div><!--picClass end-->
+          <div class="mainContent">
+          <div class="newsCenter">
+            <div class="contentTitle first">
+              <h3>新闻中心</h3>
+            </div>
+              <div class="newsDate"><p>8月23日</p></div>
+              <div class="newsContent">
+                <h4>学习计划之“Android攻城狮养成”</h4>
+                <p>想成为Android攻城狮？想开发一款专属App？没有任何基础的你，应该从何学起？</p>
+              </div>
+              <div class="newsDate"><p>8月23日</p></div>
+              <div class="newsContent">
+                <h4>学习计划之“Android攻城狮养成”</h4>
+                <p>想成为Android攻城狮？想开发一款专属App？没有任何基础的你，应该从何学起？</p>
+              </div>
+              <div class="newsDate"><p>8月23日</p></div>
+              <div class="newsContent">
+                <h4>学习计划之“Android攻城狮养成”</h4>
+                <p>想成为Android攻城狮？想开发一款专属App？没有任何基础的你，应该从何学起？</p>
+              </div>
+            </div><!--newsCenter end -->
+            <div class="hotActive">
+              <div class="contentTitle">
+                <h3>热门活动</h3>
+              </div>
+              <img src="http://img.mukewang.com/53edacdd0001b8e804820302.jpg">
+              <p>慕课网2048游戏源码征集</p>
+              <p>慕课网2048游戏源码征集</p>
+              <p>慕课网2048游戏源码征集</p>
+              <p>慕课网2048游戏源码征集</p>
+            </div>
+            <div class="connectUs">
+              <div class="contentTitle">
+                <h3>联系我们</h3>
+              </div>
+              <p>讲师招募</br>邹同学</br>电话：56789011</br>E-mail：daisy@imooc.com</p>
+            </div>
+
+          </div><!--mainContent end-->
+          <footer>
+            <div class="copyRight">
+              <p>Copyright©2017 <a href="http://weibo.com/MX626">L1st_1st</a> All Rights Reserved.</p>
+            </div> 
+          </footer>
+      </div>
+  </body>
+</html>
