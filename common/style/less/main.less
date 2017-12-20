@@ -1,0 +1,107 @@
+@import (less) "../lib/common.css";
+
+body {
+  overflow: hidden;
+}
+.todo-task-box,
+.done-task-box {
+  li {
+    &::after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+  }
+  input {
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 2px;
+      float: left;
+      width: 16px;
+      height: 16px;
+      background-color: #000;
+  }
+  label {
+    display: inline-block;
+    font-size: 14px;
+    max-width: 80%;
+    line-height: 20px;
+    padding: 0 20px;
+    vertical-align: top;
+    position: relative;
+    word-break: break-all;
+  }
+  .operate-box {
+    display: inline-block;
+    margin-right: 8px;
+    float: right;
+    button {
+      background-color: transparent;
+      padding: 4px 8px;
+      border-radius: 3px;
+      transition: background-color .2s;
+      outline: none;
+      &:hover {
+        background-color: #ccc;
+      }
+      &:active {
+        background-color: #ddd;
+        outline: none;
+      }
+    }
+  }
+}
+.todo-task-box {
+  margin-bottom: 14px;
+}
+
+.done-task-box {
+  label {
+    color: #ccc;
+    text-decoration: #dedede line-through;
+  }
+}
+
+.task-detail-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  background-color: #fff;
+  padding: 12px 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  animation: enter 1s;
+  .title {
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 12px;
+  }
+}
+
+@keyframes enter {
+  0% {
+    transform: translateX(-300px);
+    opacity: .3;
+  }
+  30% {
+    opacity: .8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes quit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

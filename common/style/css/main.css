@@ -1,0 +1,182 @@
+/*reset.*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fff;
+  font-size: 14px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td,
+th,
+caption {
+  font-size: 14px;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  border: none;
+}
+input,
+textarea,
+select,
+button {
+  font: 14px Verdana, Helvetica, Arial, sans-serif;
+}
+table {
+  border-collapse: collapse;
+}
+html {
+  overflow-y: scroll;
+}
+/*other*/
+.fr {
+  float: right;
+}
+.cl {
+  clear: both;
+}
+.ib {
+  display: inline-block;
+}
+body {
+  overflow: hidden;
+}
+.todo-task-box li::after,
+.done-task-box li::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.todo-task-box input,
+.done-task-box input {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  float: left;
+  width: 16px;
+  height: 16px;
+  background-color: #000;
+}
+.todo-task-box label,
+.done-task-box label {
+  display: inline-block;
+  font-size: 14px;
+  max-width: 80%;
+  line-height: 20px;
+  padding: 0 20px;
+  vertical-align: top;
+  position: relative;
+  word-break: break-all;
+}
+.todo-task-box .operate-box,
+.done-task-box .operate-box {
+  display: inline-block;
+  margin-right: 8px;
+  float: right;
+}
+.todo-task-box .operate-box button,
+.done-task-box .operate-box button {
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+  outline: none;
+}
+.todo-task-box .operate-box button:hover,
+.done-task-box .operate-box button:hover {
+  background-color: #ccc;
+}
+.todo-task-box .operate-box button:active,
+.done-task-box .operate-box button:active {
+  background-color: #ddd;
+  outline: none;
+}
+.todo-task-box {
+  margin-bottom: 14px;
+}
+.done-task-box label {
+  color: #ccc;
+  text-decoration: #dedede line-through;
+}
+.task-detail-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  background-color: #fff;
+  padding: 12px 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  animation: enter 1s;
+}
+.task-detail-box .title {
+  font-size: 16px;
+  line-height: 24px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+@keyframes enter {
+  0% {
+    transform: translateX(-300px);
+    opacity: .3;
+  }
+  30% {
+    opacity: .8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes quit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
