@@ -49,7 +49,7 @@
 
     var body = $('body')
 //check
-    body.on('click', 'input[type=checkbox]', function () {
+    body.on('click', '.main-content input[type=checkbox]', function () {
         var $t = $(this),
             item = $t.parent().parent(),
             id = item.data(id).id,
@@ -91,27 +91,63 @@
         showDetail(id)
     })
 
+    body.on('click', '.task-detail-box button[type=submit]', function(){
+        var $t = $(this),
+            item = $('.task-detail-box'),
+            id = item.data(id).id,
+            detail = $('.detail textarea').val()
+
+        var data = store.get(id)
+        console.log(data,id)
+
+        if (detail) {
+            data.detail = detail
+        }
+
+        store.set(id, data)
+        $('.task-detail-box').fadeOut(100, function(){
+            $(this).remove()
+        })
+    })
+
     function showDetail(id) {
         var data = store.get(id)
         var title = data.title,
             detail = data.detail || '',
             date = data.date || '',
             time = data.time || ''
+
         var taskDetailTpl =
-            '<div class="task-detail-box">' +
+            '<div class="task-detail-box" data-id='+id+'>' +
             '<div class="title"><p>' +
             title +
             '</p></div>' +
             '<div class="detail">' +
+            '<textarea>' +
             detail +
+            '</textarea>' +
             '</div>' +
+            '<label><input type="checkbox">提醒</label>' +
             '<div class="time">' +
-            '<input type="date" value="'+date+'">' +
-            '<input type="time" value="'+time+'">' +
             '</div>' +
             '<button type="submit">更新</button>' +
             '</div>'
         body.append(taskDetailTpl)
+
+        $('.task-detail-box').find('input[type=checkbox]').on('click', function(){
+            var $t = $(this),
+                check = $t.prop('checked'),
+                timeBox = $('.task-detail-box .time')
+
+            var remindTpl = 
+                '<input type="date" value="'+date+'">' +
+                '<input type="time" value="'+time+'">'
+            
+            check ?
+                timeBox.append(remindTpl) :
+                timeBox.empty()
+                
+        })
     }
 
 //清空
