@@ -1,11 +1,79 @@
 @import (less) "../lib/common.css";
 
-body {
+.btn {
+  padding: 2px 6px;
+  outline: none;
+  transition: all .3s;
+  border-radius: 4px;
   overflow: hidden;
+  color: #f4f4f4;
+  box-shadow: 1px 2px 5px #898989;
+  margin-right: 8px;
+  &:hover {
+    box-shadow: 2px 4px 10px #a2a2a2;
+  }
+  &:active {
+    box-shadow: 1px 2px 2px #aeaeae;
+  }
+  &.accept {
+    background-color: #007BFF;
+    border: 1px solid #0070e8;
+    &:hover {
+      background-color: #019dff;
+    }
+    &:active {
+      background-color: #0070e8;
+    }
+  }
+  &.attention {
+    background-color: #DC3545;
+    border: 1px solid #c8303f;
+    &:hover {
+      background-color: #ee394b;
+    }
+    &:active {
+      background-color: #c8303f;
+    }
+  }
+}
+header,
+footer,
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 800px){
+  header,
+  footer,
+  .main-content {
+    width: 100%;
+  }
+}
+@keyframes itemEnter {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: .6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .todo-task-box,
 .done-task-box {
+  margin-top: 20px;
+  ul {
+  }
   li {
+    list-style: none;
+    margin-bottom: 4px;
+    padding: 2px 0;
+    animation: itemEnter 150ms;
+    border-bottom: 1px solid #ccc;
     &::after {
       content: ' ';
       display: block;
@@ -27,7 +95,7 @@ body {
     font-size: 14px;
     max-width: 80%;
     line-height: 20px;
-    padding: 0 20px;
+    padding-left: 28px;
     vertical-align: top;
     position: relative;
     word-break: break-all;
@@ -36,24 +104,7 @@ body {
     display: inline-block;
     margin-right: 8px;
     float: right;
-    button {
-      background-color: transparent;
-      padding: 4px 8px;
-      border-radius: 3px;
-      transition: background-color .2s;
-      outline: none;
-      &:hover {
-        background-color: #ccc;
-      }
-      &:active {
-        background-color: #ddd;
-        outline: none;
-      }
-    }
   }
-}
-.todo-task-box {
-  margin-bottom: 14px;
 }
 
 .done-task-box {
@@ -62,27 +113,49 @@ body {
     text-decoration: #dedede line-through;
   }
 }
-
+.main-content {
+  position: relative;
+}
 .task-detail-box {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 4px;
+  bottom: 4px;
   width: 300px;
   background-color: #fff;
   padding: 12px 18px;
   border: 1px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
-  animation: enter 1s;
+  animation: detailEnter .3s;
   .title {
     font-size: 16px;
     line-height: 24px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 12px;
   }
+  .detail {
+    textarea {
+      width: 100%;
+      height: 4em;
+      outline: none;
+      resize: none;
+      box-sizing: border-box;
+      padding: 2px 6px;
+      line-height: 22px;
+    }
+  }
+  input {
+    outline: none;
+  }
+  input[type=date] {
+    max-width: 10em;
+  }
+  input[type=time] {
+    max-width: 5.5em;
+  }
 }
 
-@keyframes enter {
+@keyframes detailEnter {
   0% {
     transform: translateX(-300px);
     opacity: .3;

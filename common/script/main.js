@@ -7,19 +7,19 @@
         console.log('addTask',data, id)
         var todoTaskItemTpl =
             '<li data-id="'+id+'">' +
-            '<label><input type="checkbox">'+data.title+'</label>' +
+            '<label><input type="checkbox" class="check-to-do">'+data.title+'</label>' +
             '<div class="operate-box">' +
-            '<button class="delete-btn">删除</button>' +
-            '<button class="detail-btn">详情</button>' +
+            '<button class="delete-btn btn attention">删除</button>' +
+            '<button class="detail-btn btn accept">详情</button>' +
             '</div>' +
             '</li>'
 
         var doneTaskItemTpl =
             '<li data-id="'+id+'">' +
-            '<label><input type="checkbox" checked>'+data.title+'</label>' +
+            '<label><input type="checkbox" checked class="check-to-do">'+data.title+'</label>' +
             '<div class="operate-box">' +
-            '<button class="delete-btn">删除</button>' +
-            '<button class="detail-btn">详情</button>' +
+            '<button class="delete-btn btn attention">删除</button>' +
+            '<button class="detail-btn btn accept">详情</button>' +
             '</div>' +
             '</li>'
 
@@ -32,7 +32,7 @@
 //添加task
     var submitBtn = $('.add-task-box input[type=submit]')
     submitBtn.on('click', function () {
-        var title = $('.add-task-box input[type=text]')
+        var title = $('.add-task-box').find('input[type=text]')
         if (title.val() === '') return;
         var data = {
             title: title.val(),
@@ -49,7 +49,7 @@
 
     var body = $('body')
 //check
-    body.on('click', '.main-content input[type=checkbox]', function () {
+    body.on('click', '.main-content .check-to-do', function () {
         var $t = $(this),
             item = $t.parent().parent(),
             id = item.data(id).id,
@@ -110,6 +110,7 @@
         })
     })
 
+    var contentBox = $('.main-content')
     function showDetail(id) {
         var data = store.get(id)
         var title = data.title,
@@ -123,31 +124,36 @@
             title +
             '</p></div>' +
             '<div class="detail">' +
-            '<textarea>' +
+            '<textarea maxlength="140">' +
             detail +
             '</textarea>' +
             '</div>' +
             '<label><input type="checkbox">提醒</label>' +
             '<div class="time">' +
+            '<input type="date" value="'+date+'">' +
+            '<input type="time" value="'+time+'">' +
             '</div>' +
-            '<button type="submit">更新</button>' +
+            '<button type="submit" class="btn accept">更新</button>' +
+            '<button class="close-detail-btn btn attention">关闭</button>' +
             '</div>'
-        body.append(taskDetailTpl)
+        contentBox.append(taskDetailTpl)
 
+        var tDB = $('.task-detail-box')
+        $('.close-detail-btn').on('click', function () {
+            tDB.fadeOut(150, function () {
+                tDB.remove()
+            })
+        })
+        
+/*        //提醒功能
         $('.task-detail-box').find('input[type=checkbox]').on('click', function(){
             var $t = $(this),
                 check = $t.prop('checked'),
                 timeBox = $('.task-detail-box .time')
-
-            var remindTpl = 
-                '<input type="date" value="'+date+'">' +
-                '<input type="time" value="'+time+'">'
-            
-            check ?
-                timeBox.append(remindTpl) :
-                timeBox.empty()
+            var timer = setInterval(function () {
                 
-        })
+            }) 
+        })*/
     }
 
 //清空
