@@ -91,6 +91,7 @@
         showDetail(id)
     })
 
+    //更新详情
     body.on('click', '.task-detail-box button[type=submit]', function(){
         var $t = $(this),
             item = $('.task-detail-box'),
@@ -108,6 +109,9 @@
         $('.task-detail-box').fadeOut(100, function(){
             $(this).remove()
         })
+        toast({
+            ctx: '添加成功'
+        }).show()
     })
 
     var contentBox = $('.main-content')
@@ -178,3 +182,29 @@
         initData()
     })
 })();
+
+function toast(obj) {
+    //样式：toast.less
+    var o = {}
+    o.ctx = obj.ctx || ''
+    o.timeout = obj.timeout || 1600
+    var tpl =
+        '<div class="toast">' +
+        '<p>' +
+        o.ctx +
+        '</p>' +
+        '</div>'
+    this.show = function () {
+        var body = $('body')
+        body.append(tpl)
+        var t = setTimeout(function () {
+            var toast = $('.toast')
+            toast.fadeOut(200, function () {
+                toast.remove()
+            })
+            clearTimeout(t)
+        },o.timeout)
+    }
+
+    return this
+}
