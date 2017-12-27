@@ -77,13 +77,15 @@
             id = item.data(id).id
         store.remove(id)
         item.remove()
+        toast({
+            ctx: '删除成功'
+        }).show()
     })
 
 //详情
     body.on('click', '.detail-btn', function () {
-        $('.task-detail-box').hide(200, function () {
-            this.remove()
-        })
+        $('.task-detail-box').remove()
+
         var $t = $(this),
             item = $t.parent().parent(),
             id = item.data(id).id
@@ -96,21 +98,22 @@
         var $t = $(this),
             item = $('.task-detail-box'),
             id = item.data(id).id,
-            detail = $('.detail textarea').val()
+            detail = $('.detail textarea').val(),
+            dateTime = $('#laydate').val()
 
         var data = store.get(id)
         console.log(data,id)
 
-        if (detail) {
-            data.detail = detail
-        }
+
+        data.detail = detail ? detail : ''
+        data.dateTime = dateTime ?dateTime : ''
 
         store.set(id, data)
         $('.task-detail-box').fadeOut(100, function(){
             $(this).remove()
         })
         toast({
-            ctx: '添加成功'
+            ctx: '更新成功'
         }).show()
     })
 
@@ -119,8 +122,7 @@
         var data = store.get(id)
         var title = data.title,
             detail = data.detail || '',
-            date = data.date || '',
-            time = data.time || ''
+            dateTime = data.dateTime || ''
 
         var taskDetailTpl =
             '<div class="task-detail-box" data-id='+id+'>' +
@@ -132,34 +134,58 @@
             detail +
             '</textarea>' +
             '</div>' +
-            '<label><input type="checkbox">提醒</label>' +
             '<div class="time">' +
-            '<input type="date" value="'+date+'">' +
-            '<input type="time" value="'+time+'">' +
+            '<label id="laydateEvent"><input type="checkbox">提醒</label>' +
+            '<input type="text" id="laydate" readonly value="'+dateTime+'">' +
             '</div>' +
             '<button type="submit" class="btn accept">更新</button>' +
             '<button class="close-detail-btn btn attention">关闭</button>' +
             '</div>'
-        contentBox.append(taskDetailTpl)
+        body.append(taskDetailTpl)
 
+
+        //关闭详情
         var tDB = $('.task-detail-box')
         $('.close-detail-btn').on('click', function () {
             tDB.fadeOut(150, function () {
                 tDB.remove()
             })
         })
-        
-/*        //提醒功能
-        $('.task-detail-box').find('input[type=checkbox]').on('click', function(){
+
+        //提醒功能
+        remind();
+
+    }
+
+    //提醒功能
+    function remind() {
+
+        var checkNode = $('.task-detail-box').find('input[type=checkbox]'),
+            check = checkNode.prop('checked')
+        var dateNode = $('#laydate')
+        if (!check) {
+            dateNode.attr('disable','disable')
+        }else {
+            //时间组件
+            laydate.render({
+                elem: '#laydate',
+                type: 'datetime',
+                eventElem: '#laydateEvent'
+            })
+        }
+        checkNode.on('click', function(){
             var $t = $(this),
                 check = $t.prop('checked'),
                 timeBox = $('.task-detail-box .time')
-            var timer = setInterval(function () {
-                
-            }) 
-        })*/
+            if (check){
+                //时间组件
+                laydate.render({
+                    elem: '#laydate',
+                    type: 'datetime',
+                })
+            }
+        })
     }
-
 //清空
     var clearBtn = $('.add-task-box button[type=button]')
     clearBtn.on('click', function () {
@@ -176,10 +202,23 @@
             addTask(val, key)
         })
     }
-
+//加载提醒音频文件
+    function loadAudio() {
+        var audioNode = document.createElement('audio')
+        audioNode.src = './common/audio/alert.mp3'
+        document.body.appendChild(audioNode)
+    }
+    function alert() {
+        
+    }
 
     $(document).ready(function () {
         initData()
+        setTimeout(function () {
+            loadAudio()
+        },300)
+
+
     })
 })();
 
@@ -187,7 +226,7 @@ function toast(obj) {
     //样式：toast.less
     var o = {}
     o.ctx = obj.ctx || ''
-    o.timeout = obj.timeout || 1600
+    o.timeout = obj.timeout || 1400
     var tpl =
         '<div class="toast">' +
         '<p>' +
