@@ -36,7 +36,8 @@
         if (title.val() === '') return;
         var data = {
             title: title.val(),
-            check: false
+            check: false,
+            alert: false
         }
         var id = Math.floor((new Date().getTime())*Math.random())
         addTask(data,id)
@@ -159,7 +160,6 @@
 
     //提醒功能
     function remind() {
-
         var checkNode = $('.task-detail-box').find('input[type=checkbox]'),
             check = checkNode.prop('checked')
         var dateNode = $('#laydate')
@@ -200,6 +200,9 @@
         var data = []
         store.each(function (val, key) {
             addTask(val, key)
+            if (val.alert) {
+                alert(val, key)
+            }
         })
     }
 //加载提醒音频文件
@@ -208,20 +211,39 @@
         audioNode.src = './common/audio/alert.mp3'
         document.body.appendChild(audioNode)
     }
-    function alert() {
-        
+    var alertArr = []
+    function alert(val, key) {
+        alertArr.push({
+            val: val,
+            key: key
+        })
     }
 
     $(document).ready(function () {
+        var audio = null
         initData()
-        setTimeout(function () {
+        var loading = setTimeout(() => {
             loadAudio()
+            audio = $('audio')
         },300)
-
-
+        var alertSetting = setInterval(() => {
+            if (alertArr.length == 0) return
+            var now = new Date()
+            var alertTime = new Date(alertArr[0].dateTime)
+            if (alertTime <= now) {
+                audio.play()
+                alertDom(alertArr[0])
+                alertArr.pop()
+            }
+        }, 1000)
     })
 })();
-
+function alertDom(item) {
+    var tpl = '<div class="alert">' +
+        '<p>'+item.title+'</p>' +
+        '<button>关闭</button>' +
+        '</div>'
+}
 function toast(obj) {
     //样式：toast.less
     var o = {}
