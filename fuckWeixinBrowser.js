@@ -1,6 +1,6 @@
 ;(function() {
     var config = {
-        needCopy: true,
+        needCopy: false,
 
     }
     var isWeixinBrowser = function() {
@@ -13,6 +13,7 @@
     }
 
     var renderDom = function(href) {
+        var copyBtn = config.needCopy ? `<span class='copy-btn'>复制</span></p>` : ''
         var tpl = 
         `<div class='mask'>
             <div class='guide'>
@@ -20,8 +21,9 @@
             </div>
             <div class='remind'>
                 你正在访问的地址:
-                <p class='copyLink'>${href}</p>
-                已停止对微信的服务， 请选择在浏览器中打开或复制本链接。
+                <p class='copyLink'>${href} ${copyBtn}</p>
+                已停止支持微信。<br>
+                请复制本链接或在右上角菜单中选择在'浏览器中打开'。
             </div>
         </div>`
         var styl = 
@@ -37,13 +39,19 @@
             .remind {
                 margin: 30% 20px 0;
             }
+            .copy-btn {
+                text-decoration: underline;
+            }
         `
             
         var body = document.querySelector('body')
         var head = document.querySelector('head')
         head.innerHTML += '<style>' + styl + '</style>'
         body.innerHTML += tpl
-        
+        if (config.needCopy) {
+            var copy = document.querySelector('.copy-btn')
+            //todo
+        }
         return this
     }
     
