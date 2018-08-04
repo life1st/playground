@@ -6,7 +6,7 @@
 
 ### Demo1
 
-[点这里查看](https://life1st.github.io/sliceImgDemos/demo1/index.html)
+[点这里查看](https://life1st.github.io/HtmlDemos/demo1/index.html)
 
 预览图：
 
@@ -14,7 +14,7 @@
 
 ### Demo2
 
-[点这里查看](https://life1st.github.io/sliceImgDemos/demo2/index.html)
+[点这里查看](https://life1st.github.io/HtmlDemos/demo2/index.html)
 
 预览图：
 
@@ -22,5 +22,8 @@
 
 ### Demo3
 
-[点这里查看](https://life1st.github.io/sliceImgDemos/demo3/index.html)
+[点这里查看](https://life1st.github.io/HtmlDemos/demo3/index.html)
 
+### shop demo
+
+[click](https://life1st.github.io/HtmlDemos/shopDemo/index.html)
