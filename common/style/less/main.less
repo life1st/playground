@@ -1,5 +1,41 @@
-@import (less) "../lib/common.css";
-@import "../lib/toast";
+/*reset.*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body { background:#fff;font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+td,th,caption { font-size:14px; }
+address, caption, cite, code, dfn, em, strong, var { font-style:normal; font-weight:normal;}
+a { text-decoration:none;color: #000;}
+img { border:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+html {overflow-y: scroll;}
+/*other*/
+.fr {
+  float: right;
+}
+.cl {
+  clear: both;
+}
+.ib {
+  display: inline-block;
+}
+
+/*toast*/
+.toast {
+  max-width: 300px;
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  border: 1px solid #696969;
+  background-color: #4c4c4c;
+  box-shadow: 1px 2px 10px #828282;
+  
+  position: fixed;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 .btn {
   padding: 2px 6px;

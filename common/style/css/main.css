@@ -97,7 +97,7 @@ html {
 .btn {
   padding: 2px 6px;
   outline: none;
-  transition: all .3s;
+  transition: all 0.3s;
   border-radius: 4px;
   overflow: hidden;
   color: #f4f4f4;
@@ -148,7 +148,7 @@ footer,
     opacity: 0;
   }
   30% {
-    opacity: .6;
+    opacity: 0.6;
   }
   50% {
     opacity: 1;
@@ -222,7 +222,7 @@ footer,
   border: 1px solid #ccc;
   border-radius: 4px;
   overflow: hidden;
-  animation: detailEnter .3s;
+  animation: detailEnter 0.3s;
 }
 .task-detail-box .title {
   font-size: 16px;
@@ -251,10 +251,10 @@ footer,
 @keyframes detailEnter {
   0% {
     transform: translateY(-600px);
-    opacity: .3;
+    opacity: 0.3;
   }
   30% {
-    opacity: .8;
+    opacity: 0.8;
   }
   50% {
     opacity: 1;
