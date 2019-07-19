@@ -1,0 +1,273 @@
+/*reset.*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fff;
+  font-size: 14px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+td,
+th,
+caption {
+  font-size: 14px;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  border: none;
+}
+input,
+textarea,
+select,
+button {
+  font: 14px Verdana, Helvetica, Arial, sans-serif;
+}
+table {
+  border-collapse: collapse;
+}
+html {
+  overflow-y: scroll;
+}
+/*other*/
+.fr {
+  float: right;
+}
+.cl {
+  clear: both;
+}
+.ib {
+  display: inline-block;
+}
+/*toast*/
+.toast {
+  max-width: 300px;
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  border: 1px solid #696969;
+  background-color: #4c4c4c;
+  box-shadow: 1px 2px 10px #828282;
+  position: fixed;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn {
+  padding: 2px 6px;
+  outline: none;
+  transition: all 0.3s;
+  border-radius: 4px;
+  overflow: hidden;
+  color: #f4f4f4;
+  box-shadow: 1px 2px 5px #898989;
+  margin-right: 8px;
+}
+.btn:hover {
+  box-shadow: 2px 4px 10px #a2a2a2;
+}
+.btn:active {
+  box-shadow: 1px 2px 2px #aeaeae;
+}
+.btn.accept {
+  background-color: #007BFF;
+  border: 1px solid #0070e8;
+}
+.btn.accept:hover {
+  background-color: #019dff;
+}
+.btn.accept:active {
+  background-color: #0070e8;
+}
+.btn.attention {
+  background-color: #DC3545;
+  border: 1px solid #c8303f;
+}
+.btn.attention:hover {
+  background-color: #ee394b;
+}
+.btn.attention:active {
+  background-color: #c8303f;
+}
+header,
+footer,
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 800px) {
+  header,
+  footer,
+  .main-content {
+    width: 100%;
+  }
+}
+@keyframes itemEnter {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.todo-task-box,
+.done-task-box {
+  margin-top: 20px;
+}
+.todo-task-box li,
+.done-task-box li {
+  list-style: none;
+  margin-bottom: 4px;
+  padding: 2px 0;
+  animation: itemEnter 150ms;
+  border-bottom: 1px solid #ccc;
+}
+.todo-task-box li::after,
+.done-task-box li::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.todo-task-box input,
+.done-task-box input {
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  float: left;
+  width: 16px;
+  height: 16px;
+  background-color: #000;
+}
+.todo-task-box label,
+.done-task-box label {
+  display: inline-block;
+  font-size: 14px;
+  max-width: 80%;
+  line-height: 20px;
+  padding-left: 28px;
+  vertical-align: top;
+  position: relative;
+  word-break: break-all;
+}
+.todo-task-box .operate-box,
+.done-task-box .operate-box {
+  display: inline-block;
+  margin-right: 8px;
+  float: right;
+}
+.done-task-box label {
+  color: #ccc;
+  text-decoration: #dedede line-through;
+}
+.main-content {
+  position: relative;
+}
+.task-detail-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 24px;
+  width: 300px;
+  background-color: #fff;
+  padding: 12px 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  animation: detailEnter 0.3s;
+}
+.task-detail-box .title {
+  font-size: 16px;
+  line-height: 24px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+.task-detail-box .detail textarea {
+  width: 100%;
+  height: 4em;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  padding: 2px 6px;
+  line-height: 22px;
+}
+.task-detail-box input {
+  outline: none;
+}
+.task-detail-box input[type=date] {
+  max-width: 10em;
+}
+.task-detail-box input[type=time] {
+  max-width: 5.5em;
+}
+@keyframes detailEnter {
+  0% {
+    transform: translateY(-600px);
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes quit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
