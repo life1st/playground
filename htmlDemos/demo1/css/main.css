@@ -1,0 +1,542 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+::selection {
+    background: #a6a6a6;
+    color: #fff;
+}
+@keyframes transtop {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+    15% {
+        transform: translate3d(0,-12px,0);
+    }
+    40% {
+        transform: translate3d(0,8px,0);
+    }
+    60% {
+        transform: translate3d(0,-6px,0);
+    }
+    80% {
+        transform: translate3d(0,2px,0);
+    }
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+body{
+    min-width: 1500px;
+    font-family: 'Montserrat';
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+header {
+    position: relative;
+    width: 1170px;
+    height: 100px;
+    margin: 0 auto;
+    z-index: 10;
+}
+.logo{
+    display: inline-block;
+    height: 100px;
+    width: 110px;
+    font-size: 60px;
+    color: #fff;
+}
+.top-navi {
+    display: inline-block;
+    width: 800px;
+    height: 100px;
+    line-height: 96px;
+    font-size: 18px;
+    float: right;
+}
+.top-navi li {
+    display: inline-block;
+}
+.top-navi a {
+    display: inline-block;
+    padding: 0 15px;
+    border-top: 4px solid rgba(0,0,0,0);
+    transition: border-top .3s;
+}
+.top-navi a:hover {
+    border-top: 4px solid #fff;
+    animation: fontsma .2s;
+}
+@keyframes fontsma {
+    0% {
+        line-height: 96px;
+    }
+    50% {
+        line-height: 90px;
+    }
+    100% {
+        line-height: 96px;
+    }
+}
+.box1 {
+    position: relative;
+    top: -100px;
+    height: 785px;
+    width: 100%;
+    background: url("../images/iPhone.png");
+    z-index: 0;
+    text-align: center;
+}
+.box1 h1 {
+    padding-top: 310px;
+    font-size: 68px;
+    color: #fff;
+}
+.box1 a,.box6-content a {
+    margin: 75px 15px 0;
+    display: inline-block;
+    width: 260px;
+    height: 74px;
+    border: 3px solid #fff;
+    border-radius: 4px;
+    font-size: 30px;
+    line-height: 74px;
+    text-align: center;
+    transition: box-shadow .3s,background-color .6s;
+}
+.box1 a:hover,.box6-content a:hover {
+    animation: hoverbutton .5s;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    background-color: rgba(117,180,43,0.7);
+}
+@keyframes hoverbutton {
+    0% {
+        border: 3px solid #fff;
+    }
+    50% {
+        border: 3px solid rgba(255,255,255,0.6);
+    }
+    100% {
+        border: 3px solid #fff;
+    }
+}
+.apple i {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-bottom: 4px;
+    background: url("../images/Icon-AppStore.png");
+}
+.android i {
+    display: inline-block;
+    line-height: 74px;
+    width: 42px;
+    height: 47px;
+    vertical-align: middle;
+    margin-right: 15px;
+    margin-bottom: 4px;
+    background: url("../images/icon-PlayStore.png");
+
+}
+
+.box2 {
+    height: 700px;
+    width: 100%;
+    text-align: center;
+}
+.box2 h2 {
+    margin-top: 5px;
+    font-size: 48px;
+}
+.detail {
+    display: inline-block;
+    width: 250px;
+    margin: 65px 85px 0;
+    vertical-align: top;
+}
+.detail i{
+    display: block;
+    width: 230px;
+    height: 230px;
+    margin:0 10px;
+}
+.detail i:hover {
+    animation: biger .5s;
+}
+@keyframes biger {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(.96);
+    }
+    35% {
+        transform: scale(1.08);
+    }
+    60% {
+        transform: scale(.98);
+    }
+    90% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+.detail-icon1 {
+    background: url("../images/Focus.png") no-repeat center;
+}
+.detail-icon2 {
+    background: url("../images/TouchID.png") no-repeat center;
+}
+.detail-icon3 {
+    background: url("../images/Filters.png") no-repeat center;
+}
+.detail h4 {
+    font-size: 18px;
+    margin-top: 40px;
+    line-height: 26px;
+}
+.detail p {
+    font-size: 16px;
+    line-height: 22px;
+}
+.box3 {
+    height: 734px;
+    min-width: 1200px;
+    padding-left:410px;
+    margin: 0 auto;
+    background: url("../images/iPhone-black.png");
+}
+.box3_content {
+    width: 470px;
+    margin-left: 600px;
+    padding-top:190px;
+}
+.box3_content h2 {
+    font-size: 48px;
+    line-height: 48px;
+    color: #fff;
+}
+.box3_content p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #aeaeae;
+    margin-top: 30px;
+}
+.play-box {
+    margin-top: 60px;
+    position: relative;
+}
+.play-box a{
+    display: inline-block;
+    position: absolute;
+    width: 170px;
+    height: 93px;
+    background: url("../images/Video.png") no-repeat;
+    transition: all .2s;
+}
+.play-box a:hover {
+    animation: transtop .5s ease-out;
+    box-shadow: 2px 2px 5px #000;
+}
+.play-box p{
+    display: inline-block;
+    height: 93px;
+    width: 265px;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 200px;
+}
+.slide_button1 {
+    margin-top: 45px;
+    height: 16px;
+    display: inline-block;
+}
+.slide_button1 i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    border:2px solid #fff;
+    border-radius: 16px;
+}
+.slide_button1 i.active {
+    background-color: #fff;
+}
+.box4 {
+    min-width: 1200px;
+    height: 800px;
+    padding-left: 410px;
+    background: url("../images/Nexus5.png");
+}
+.box4-content {
+    margin-left: 100px;
+    padding-top: 140px;
+}
+.box4-content h2 {
+    font-size: 48px;
+    color: #fff;
+}
+.box4-content > p {
+    margin-top: 40px;
+    margin-bottom: 75px;
+    width: 470px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #a6a6a6;
+}
+.box4-card {
+    position: relative;
+    width: 470px;
+    height: 240px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.box4-card:hover {
+    animation: transtop .6s;
+}
+.box4-card > i {
+    float: left;
+    display: inline-block;
+    width: 89px;
+    height: 89px;
+    margin-top: 40px;
+    margin-left: 30px;
+    background: url("../images/Brush.png") no-repeat;
+}
+.card-content {
+    padding-left: 150px;
+    padding-top: 35px;
+}
+.card-content h4 {
+    color: #74b22b;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.card-content p {
+    font-size: 16px;
+    line-height: 24px;
+    width: 265px;
+    color: #707070;
+}
+.slide_button2 {
+    width: 440px;
+    height: 40px;
+    padding-left: 30px;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    bottom: 0;
+    background-color: #82c830;
+}
+.slide_button2 i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 14px 4px;
+    border:2px solid #fff;
+    border-radius: 16px;
+}
+.slide_button2 i.active {
+    background-color: #fff;
+}
+.box5 {
+    height: 825px;
+}
+.box5-content {
+    padding-top: 75px;
+    padding-left: 410px;
+}
+.box5-content h2 {
+    font-size: 48px;
+    color: #82c830;
+    margin-bottom: 35px;
+}
+.box5-content p {
+    width: 440px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #666;
+}
+.box5-img-box {
+    font-size: 0;
+    padding-top: 45px;
+    width: 100%;
+    vertical-align: bottom;
+}
+.img1 {
+    width: 22%;
+    height: 510px;
+    display: inline-block;
+    background: url("../images/photo1.png") no-repeat;
+}
+.img2 {
+    width: 25%;
+    height: 510px;
+    display: inline-block;
+    background: url("../images/Photo2.png");
+}
+.img3 {
+    width: 26%;
+    height: 555px;
+    display: inline-block;
+    position: relative;
+    background: url("../images/Photo3.png");
+}
+.img-content {
+    width: 100%;
+    height: 80px;
+    background-color: #151515;
+    position: absolute;
+    bottom: 0;
+}
+.img-content p:first-child {
+    display: inline-block;
+    color: #c2c2c2;
+    font-size: 18px;
+    line-height: 80px;
+    margin-left: 30px;
+}
+.like {
+    display: inline-block;
+    color: #80c530;
+    font-size: 18px;
+    line-height: 80px;
+    margin-right: 30px;
+    float: right;
+}
+.img4 {
+    width: 27%;
+    height: 515px;
+    display: inline-block;
+    background: url("../images/Photo4.png");
+}
+.box6 {
+    height: 720px;
+    padding-left: 410px;
+    margin-top: 25px;
+    background-color: #75b42b;
+    vertical-align: top;
+}
+.box6 > i {
+    display: inline-block;
+    margin-top: 220px;
+    width: 370px;
+    height: 355px;
+    vertical-align: top;
+    background: url("../images/App-icon.png");
+}
+.box6-content {
+    display: inline-block;
+    width: 600px;
+}
+.box6-content h4 {
+    margin-top: 180px;
+    font-size: 48px;
+    line-height: 64px;
+    color: #fff;
+}
+.box6-content p {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 30px;
+}
+.box7 {
+    height: 450px;
+    min-width: 1000px;
+    padding: 0 440px;
+    background: #e7e7e7;
+    margin-top: 0;
+}
+.box7 h2 {
+    font-size: 36px;
+    font-weight: normal;
+    border-bottom: 3px solid #cbcbcb;
+    padding-bottom: 20px;
+    padding-top: 90px;
+    margin: 0 0 25px;
+    color: #666;
+}
+.box7 h4 {
+    font-size: 18px;
+    line-height: 38px;
+}
+.box7 p {
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 40px;
+}
+.ios-detail {
+    display: inline-block;
+    width: 45%;
+    color: #666;
+}
+.ios-detail i {
+    display: inline-block;
+    width: 165px;
+    height: 55px;
+    background: url("../images/iOS-devices.png") no-repeat;
+}
+.android-detail {
+    display: inline-block;
+    margin-left:9%;
+    width: 45%;
+    color: #666;
+}
+.android-detail i {
+    display: inline-block;
+    width: 380px;
+    height: 45px;
+    background: url("../images/Android-devices.png") no-repeat;
+}
+footer {
+    height: 220px;
+    min-width: 1000px;
+    padding: 0 410px;
+    background-color: #f4f4f4;
+}
+.copyright {
+    display: inline-block;
+    width: 500px;
+    padding-top: 95px;
+    font-size: 18px;
+    vertical-align: top;
+    color: #666;
+}
+.mailto {
+    display: inline-block;
+    width: 450px;
+    padding-top: 60px;
+    float: right;
+}
+.mailto p {
+    font-size: 16px;
+    padding-bottom: 20px;
+    color: #666;
+}
+.mailto input {
+    display: inline-block;
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    outline: none;
+    border:1px solid #666;
+    padding-left: 15px;
+    font-size: 18px;
+}
+.mailto a {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #82c830;
+}
